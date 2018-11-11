@@ -1,11 +1,14 @@
 {
     "name": "@riouxjean/test",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "Testing with my first npm package.",
     "license": "MIT",
     "repository": "jelecool/npm_test",
     "main": "index.js",
-    "keywords": ["test","npm","package","riouxjean"]
+    "keywords": [
+        "test",
+        "npm",
+        "package",
+        "riouxjean"
+    ]
 }
-
-
