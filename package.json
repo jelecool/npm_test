@@ -2,6 +2,7 @@
     "name": "@riouxjean/test",
     "version": "2.0.0",
     "description": "Testing with my first npm package.",
+    "author": "Jean-Emrick Rioux <rioux@jean-emrick.com>",
     "license": "MIT",
     "repository": "jelecool/npm_test",
     "main": "index.js",
