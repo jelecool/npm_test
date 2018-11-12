@@ -15,8 +15,12 @@ const js = async (ticker) => {
 }
 
 module.exports = async (ticker) => {
+    if (typeof ticker == "string") {
     var result = await js(ticker);
     return result;
+    } else {
+      return "I need a string!";
+    }
 };
 
 

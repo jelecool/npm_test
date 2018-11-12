@@ -1,6 +1,10 @@
 # NPM PACKAGE - TESTING
 
 [![npm](https://img.shields.io/npm/v/@riouxjean/test.svg)](https://github.com/jelecool/npm_test)
+[![npm](https://img.shields.io/npm/dt/@riouxjean/test.svg?style=flat-square)](https://www.npmjs.com/package/@riouxjean/test)
+[![GitHub](https://img.shields.io/github/license/jelecool/npm_test.svg?style=flat-square)](https://github.com/jelecool/npm_test)
+
+
 
 Testing with : Removes all space from string
 
@@ -28,9 +32,7 @@ test("GOOGL");
 //  shareprice: 49.15 } 
 
 tiny(1423);
-//=> Uncaught TypeError: Tiny wants a string!
-//    at tiny (<anonymous>:2:41)
-//    at <anonymous>:1:1
+//=> I need a string!
 ```
 
 ### References
