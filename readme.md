@@ -31,7 +31,7 @@ test("GOOGL");
 //  totalassets: 13856000000,
 //  shareprice: 49.15 } 
 
-tiny(1423);
+test(1423);
 //=> I need a string!
 ```
 
