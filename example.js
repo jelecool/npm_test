@@ -1,5 +1,14 @@
 const test = require('./');
-const concat = require('./concat');
 
-var fullName = concat("Émile", "Paradis");
-test(fullName);
+const async = async (ticker) => {
+    const r = await test(ticker);
+    console.log("POS: ", r);
+    console.log("VTI: ", r.vti);
+    return r;
+}
+
+//console.log(process.argv[2]);
+
+async(process.argv[2]);
+
+

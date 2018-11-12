@@ -1,6 +1,6 @@
 {
     "name": "@riouxjean/test",
-    "version": "2.0.0",
+    "version": "3.0.0",
     "description": "Testing with my first npm package.",
     "author": "Jean-Emrick Rioux <rioux@jean-emrick.com>",
     "license": "MIT",
@@ -11,5 +11,9 @@
         "npm",
         "package",
         "riouxjean"
-    ]
+    ],
+    "dependencies": {
+        "node-fetch": "^2.2.1",
+        "underscore": "^1.9.1"
+    }
 }

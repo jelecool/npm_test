@@ -13,12 +13,21 @@ $ npm install @riouxjean/test
 ## Usage
 
 ```js
-const tiny = require("@riouxjean/test");
+const test = require("@riouxjean/test");
 
-tiny("So much space!");
-//=> "Somuchspace!"
+test("GOOGL");
+// => Position {
+//  earnings: 1228000000,
+//  outstanding: 318100000,
+//  revenue: 39403000000,
+//  cashs: 2240000000,
+//  div: -505000000,
+//  liabilities: 9147000000,
+//  intangibleassets: undefined,
+//  totalassets: 13856000000,
+//  shareprice: 49.15 } 
 
-tiny(1337);
+tiny(1423);
 //=> Uncaught TypeError: Tiny wants a string!
 //    at tiny (<anonymous>:2:41)
 //    at <anonymous>:1:1
