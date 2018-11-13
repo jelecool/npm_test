@@ -8,11 +8,12 @@ var alpha_options = {
     functions : {
       monthly : "TIME_SERIES_MONTHLY",
       daily : "TIME_SERIES_DAILY",
-      weekly : "TIME_SERIES_WEEKLY"
+      weekly : "TIME_SERIES_WEEKLY",
+      last: "GLOBAL_QUOTE"
     }
   };
 
-  function final_url(base, option, symbol, key) {
+  function finalUrl(base, option, symbol, key) {
     return (base + "function=" + option + '&symbol=' + symbol + "&apikey=" + key) ;
   }
   function getQuarters(quarter, mois) {
@@ -32,10 +33,15 @@ var alpha_options = {
 
   const alpha_request = async (ticker) => {
     try {
-        var alpha_url = final_url(alpha_options.base_url, alpha_options.functions.monthly, ticker, alpha_options.key);
-        const alpha = await fetch(alpha_url);
-        const alpha_json = await alpha.json();
-        const prices_valeurs = await alpha_json["Monthly Time Series"];
+        var quarters_url = finalUrl(alpha_options.base_url, alpha_options.functions.monthly, ticker, alpha_options.key);
+        var last_url = finalUrl(alpha_options.base_url, alpha_options.functions.last, ticker, alpha_options.key)
+        const quarts = await fetch(quarters_url);
+        const last = await fetch(last_url);
+
+        const quarters_json = await quarts.json();
+        const last_json = await last.json();
+        const last_parsed = parseFloat(last_json["Global Quote"]["05. price"]);
+        const prices_valeurs = await quarters_json["Monthly Time Series"];
         //console.log(prices_valeurs, calc_json, cash_json, bal_json, income_json);
         const keyz = await Object.keys(prices_valeurs);
         var deuxmillesdixsept = [];
@@ -84,7 +90,7 @@ var alpha_options = {
         getQuarters(q3, mois);
         getQuarters(q2, mois);
         getQuarters(q1, mois);
-        var quarters = [q1, q2, q3, q4];
+        var quarters = [q1, q2, q3, q4,last_parsed];
         //console.log(deuxmillesdixsept);
         //console.log("QUARTERS :", quarters);
         return quarters;

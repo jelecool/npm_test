@@ -9,7 +9,8 @@ class Position {
     this.intangibleassets = funda.bal.intangibleassets === undefined ? 0 : funda.bal.intangibleassets;
     this.totalassets = funda.bal.totalassets,
     this.eg = Math.round(funda.calc.netincomegrowth * 100) / 100,
-    this.shareprice = prices[0].close
+    this.shareprice = prices[0].close,
+    this.lastprice = prices[4]
   }
   // Getter
   get eps() {
@@ -76,7 +77,7 @@ class Position {
     return eps;
   }
   price_earning() {
-    var pe_c = this.shareprice / this.eps;
+    var pe_c = this.lastprice / this.eps;
     var pe =Math.round(pe_c * 100) / 100
     return pe;
   }
@@ -96,12 +97,12 @@ class Position {
     return pc;
   }
   marketcapitalization() {
-    var mc = this.shareprice * this.outstanding;
+    var mc = this.lastprice * this.outstanding;
     return mc;
   }
   dividendYield() {
     var dps = this.dividend / this.outstanding ;
-    var y_c = (dps / this.shareprice);
+    var y_c = (dps / this.lastprice);
     var y = Math.round(y_c * 100) / 100
     return y;
   }
