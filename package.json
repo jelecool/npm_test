@@ -1,6 +1,6 @@
 {
     "name": "@riouxjean/test",
-    "version": "3.0.2",
+    "version": "3.0.5",
     "description": "Testing with my first npm package.",
     "author": "Jean-Emrick Rioux <rioux@jean-emrick.com>",
     "license": "MIT",

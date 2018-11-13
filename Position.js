@@ -8,7 +8,7 @@ class Position {
     this.liabilities = funda.bal.totalliabilities,
     this.intangibleassets = funda.bal.intangibleassets === undefined ? 0 : funda.bal.intangibleassets;
     this.totalassets = funda.bal.totalassets,
-    this.eg = funda.calc.netincomegrowth,
+    this.eg = Math.round(funda.calc.netincomegrowth * 100) / 100,
     this.shareprice = prices[0].close
   }
   // Getter
@@ -71,23 +71,28 @@ class Position {
   }
   // Method
   perShare() {
-    var eps = this.earnings / this.outstanding;
+    var eps_c = this.earnings / this.outstanding;
+    var eps = Math.round(eps_c * 100) / 100
     return eps;
   }
   price_earning() {
-    var pe = this.shareprice / this.eps;
+    var pe_c = this.shareprice / this.eps;
+    var pe =Math.round(pe_c * 100) / 100
     return pe;
   }
   price_sales() {
-    var ps = this.marketcap / this.revenue;
+    var ps_c = this.marketcap / this.revenue;
+    var ps = Math.round(ps_c * 100) / 100
     return ps;
   }
   price_book() {
-    var pb = this.marketcap / this.bookvalue;
+    var pb_c = this.marketcap / this.bookvalue;
+    var pb = Math.round(pb_c * 100) / 100
     return pb;
   }
   price_cash() {
-    var pc = this.marketcap / this.cashs;
+    var pc_c = this.marketcap / this.cashs;
+    var pc = Math.round(pc_c * 100) / 100
     return pc;
   }
   marketcapitalization() {
@@ -96,14 +101,16 @@ class Position {
   }
   dividendYield() {
     var dps = this.dividend / this.outstanding ;
-    var y = (dps / this.shareprice);
+    var y_c = (dps / this.shareprice);
+    var y = Math.round(y_c * 100) / 100
     return y;
   }
   payoutRatio() {
     if (this.dividend < 0) {
       return 0;
     } else {
-      var ratio = (this.dividend / this.earnings);
+      var ratio_c = (this.dividend / this.earnings);
+      var ratio = Math.round(ratio_c * 100) / 100;
       return ratio;
     }
   }
@@ -124,7 +131,8 @@ class Position {
     }
   }
   debttoequity() {
-    var de = this.liabilities / this.bookvalue;
+    var de_c = this.liabilities / this.bookvalue;
+    var de = Math.round(de_c * 100) / 100
     return de;
   }
   exe1() {
@@ -178,7 +186,8 @@ class Position {
     }
   }
   evtie() {
-    var vti = 14.286 * (this.x1 + this.x2 + this.x3 + this.x4 + this.x5 + this.x6 + this.x7);
+    var vti_c = 14.286 * (this.x1 + this.x2 + this.x3 + this.x4 + this.x5 + this.x6 + this.x7);
+    var vti = Math.round(vti_c * 100) / 100
     return vti;
   }
 }
