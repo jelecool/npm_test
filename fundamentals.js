@@ -1,7 +1,7 @@
 var year = ["2017", "2016","2015"]
 const fetch = require('node-fetch');
 var intrinio_options = {
-    key: "Bearer OmE2MGExOWU5NjNiMjM2MDlhOTlhMWViOTY1ODE5ZTkw",
+    key: "Bearer OjMxZjgzZmExNDU0ZDZkYThhODgwMTBiOWY4MzQwY2Uz",
     sheet: {
       balance_sheet: 'balance_sheet',
       income_statement: 'income_statement',
